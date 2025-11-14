@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken, clearToken } from '@/utils/auth';
 
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'https://sweet-shop-5qgr.onrender.com';
 
 // Create axios instance
 export const api = axios.create({
