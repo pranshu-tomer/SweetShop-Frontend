@@ -32,8 +32,7 @@ const SweetForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditing = !!id;
-
-  const [formData, setFormData] = useState<SweetFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     category: '',
     price: '',
@@ -53,8 +52,8 @@ const SweetForm = () => {
     try {
       setFetchingData(true);
       const response = await sweetsAPI.getAll();
-      const sweet = response.data.find((s) => s.id === sweetId);
       
+      const sweet = response.data.find((s) => s.id == sweetId);
       if (sweet) {
         setFormData({
           name: sweet.name,

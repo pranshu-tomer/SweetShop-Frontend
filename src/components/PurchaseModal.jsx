@@ -17,7 +17,7 @@ import { toast } from 'sonner';
 
 
 const PurchaseModal = ({ sweet, isOpen, onClose, onSuccess }) => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -52,9 +52,12 @@ const PurchaseModal = ({ sweet, isOpen, onClose, onSuccess }) => {
   const totalPrice = sweet.price * quantity;
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
+    if(!price){
+      price = 0;
+    }
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'INR',
     }).format(price);
   };
 
@@ -102,7 +105,7 @@ const PurchaseModal = ({ sweet, isOpen, onClose, onSuccess }) => {
                 min="1"
                 max={sweet.quantity}
                 value={quantity}
-                onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
                 required
               />
             </div>

@@ -102,7 +102,6 @@ const SearchBar = ({ onSearch, loading = false }) => {
                     <SelectValue placeholder="All categories" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All categories</SelectItem>
                     {CATEGORIES.map((category) => (
                       <SelectItem key={category} value={category}>
                         {category}

@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
     const initAuth = () => {
       if (isAuthenticated()) {
         const userData = getUserFromToken();
+        console.log('Authenticated user:', userData);
         setUser(userData);
       }
       setLoading(false);

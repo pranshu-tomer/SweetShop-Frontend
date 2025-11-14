@@ -6,7 +6,7 @@ import SweetCard from '@/components/SweetCard';
 import SearchBar from '@/components/SearchBar';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Plus, Package } from 'lucide-react';
+import { Plus, Package, Contact } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
